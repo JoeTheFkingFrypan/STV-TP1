@@ -22,7 +22,7 @@ public class Q2 {
             if(null != closed) {
                 String fileName = closed.getChild("name").getText();
                 if(openedFiles.contains(fileName)) {
-                    openedFiles.add(closed.getChild("name").getText());
+                    openedFiles.remove(closed.getChild("name").getText());
                 }
             }
 
