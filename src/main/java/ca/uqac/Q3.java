@@ -17,6 +17,7 @@ public class Q3 {
                 String appName = launched.getChild("application").getText();
                 int concurrentUsers = loadedAppsPerUser.addUser(appName, launched.getChild("user").getText());
                 if(concurrentUsers >= 2) {
+                    noMatches = false;
                     System.out.println("    - Application " + appName + " is currently used by " + concurrentUsers + " different users at the same time");
                 }
             }
@@ -26,6 +27,10 @@ public class Q3 {
                 String username = logout.getChild("user").getText();
                 loadedAppsPerUser.removeUser(username);
             }
+        }
+
+        if(noMatches) {
+            System.out.println("No concurrent application usage could be found");
         }
     }
 }
