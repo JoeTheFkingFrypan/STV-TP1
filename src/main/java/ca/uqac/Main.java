@@ -26,6 +26,10 @@ public class Main {
             Q2.findFilesWrittenWithoutBeingOpened(events);
             System.out.println("\n======================= [QUESTION #3] =======================\n");
             Q3.findConcurrentApplications(events);
+            System.out.println("\n======================= [QUESTION #4] =======================\n");
+            Q4.findLineEndings(events);
+            System.out.println("\n======================= [QUESTION #5] =======================\n");
+            Q5.findBruteForceAttempts(events);
 
         } catch (IOException | JDOMException e) {
             System.err.println("An error occured while processing file");
