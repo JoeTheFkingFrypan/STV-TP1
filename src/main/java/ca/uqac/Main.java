@@ -24,6 +24,8 @@ public class Main {
             Q1.findSessionsLastingForOverOneHour(events);
             System.out.println("\n======================= [QUESTION #2] =======================\n");
             Q2.findFilesWrittenWithoutBeingOpened(events);
+            System.out.println("\n======================= [QUESTION #3] =======================\n");
+            Q3.findConcurrentApplications(events);
 
         } catch (IOException | JDOMException e) {
             System.err.println("An error occured while processing file");
