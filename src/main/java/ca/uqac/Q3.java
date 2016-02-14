@@ -1,5 +1,6 @@
 package ca.uqac;
 
+import ca.uqac.core.LoadedApps;
 import org.jdom2.Element;
 
 import java.util.List;

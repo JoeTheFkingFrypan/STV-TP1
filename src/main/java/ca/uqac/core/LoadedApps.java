@@ -1,4 +1,4 @@
-package ca.uqac;
+package ca.uqac.core;
 
 import java.util.HashMap;
 import java.util.HashSet;
