@@ -19,9 +19,9 @@ public class Q4 {
 
             boolean lineFound = false;
             Line currentLine = null;
+            Click current = ClickParser.build(currentEvent);
 
             if(previousEvent != null && antePreviousEvent != null) {
-                Click current = ClickParser.build(currentEvent);
                 Click previous = ClickParser.build(previousEvent);
                 Click antePrevious = ClickParser.build(antePreviousEvent);
 
@@ -55,8 +55,12 @@ public class Q4 {
                 }
             }
 
-            antePreviousEvent = previousEvent;
-            previousEvent = currentEvent;
+            //updating previous event and antePrevious event
+            if(current != null)
+            {
+                antePreviousEvent = previousEvent;
+                previousEvent = currentEvent;
+            }
         }
 
     }

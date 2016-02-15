@@ -14,6 +14,13 @@ public class Main {
         Document document = null;
         String fallback = "log.xml";
 
+        if(args.length != 1)
+        {
+            System.err.println("Unexpected arguments.");
+            System.err.println("Usage : program <logPath>");
+            return;
+        }
+
         try {
             document = FileLoader.loadExternalFile(args[0]);
         } catch (FileLoaderException e) {
