@@ -80,6 +80,10 @@ public class Main {
                 System.out.println("\n======================= [QUESTION #5] =======================\n");
                 Q5.findBruteForceAttempts(events);
                 break;
+
+            default:
+                System.err.println("[ERROR] This question number does not exist. Correct range is [1-5].");
+                break;
         }
     }
 }
