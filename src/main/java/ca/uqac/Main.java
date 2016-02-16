@@ -13,14 +13,7 @@ public class Main {
 
         Document document = null;
         String fallback = "log.xml";
-
-        if(args.length != 1)
-        {
-            System.err.println("Unexpected arguments.");
-            System.err.println("Usage : program <logPath>");
-            return;
-        }
-
+        
         try {
             switch (args.length) {
                 case 0:
@@ -33,6 +26,7 @@ public class Main {
                 default:
                     System.err.println("[WARN] The application only requires one parameter (path to the log file to be parsed)");
                     System.err.println("[WARN] Trying to read file at " + args[0] + " (all other parameters will be ignored)");
+                    System.err.println("[WARN] Usage : program <logPath>");
                     document = FileLoader.loadExternalFile(args[0]);
                     break;
             }
