@@ -22,8 +22,22 @@ public class Main {
         }
 
         try {
-            document = FileLoader.loadExternalFile(args[0]);
+            switch (args.length) {
+                case 0:
+                    throw new FileLoaderException("[ERROR] Argument exception: the application requires you to specify a path to the log file to be parsed", new IllegalArgumentException());
+
+                case 1:
+                    document = FileLoader.loadExternalFile(args[0]);
+                    break;
+
+                default:
+                    System.err.println("[WARN] The application only requires one parameter (path to the log file to be parsed)");
+                    System.err.println("[WARN] Trying to read file at " + args[0] + " (all other parameters will be ignored)");
+                    document = FileLoader.loadExternalFile(args[0]);
+                    break;
+            }
         } catch (FileLoaderException e) {
+            System.err.println(e.getMessage());
             System.err.println("[FALLBACK] Now using resource file '" + fallback + "' as a fallback (located at src/main/resources/log.xml)");
             document = FileLoader.loadResourceFile(fallback);
         }
